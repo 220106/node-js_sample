@@ -18,7 +18,28 @@ router.get('/', (req, res) => {
 })
 
 router.get('/profile', (req, res) => {
-    res.render('profile')
+    // res.send('プロフィール')
+    var user = {
+        id: 1,
+        name: 'YSE',
+        birthplace: '横浜',
+        hobby: ['旅行', 'グルメ', 'スポーツ'],
+    }
+    var data = {
+        title: 'プロフィール',
+        user: user,
+    }
+    // views/profile.ejs に data を渡して表示
+    res.render('profile', data)
+})
+//商品一覧
+router.get('/item', (req, res) => {
+    var data = {
+        title: '商品一覧',
+        items: item.get(),
+    }
+    // views/items/index.ejs に data を渡して表示
+    res.render('item/index', data)
 })
 
 // /item/xxx のルーティング（パスパラメーター）
@@ -28,7 +49,11 @@ router.get('/item/:id', (req, res) => {
     // TODO: case2 APIサーバを利用する
     // itemモデルを使って IDで商品データを取得
     var selectItem = item.find(id)
-    res.send(selectItem.name)
+    var data = {
+        title: '商品詳細',
+        item: selectItem,
+    }
+    res.render('item/detail',data)
 })
 
 // POSTリクエスト
