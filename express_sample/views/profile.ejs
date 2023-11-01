@@ -1,17 +1,25 @@
-
-    <h1><%= title %></h1>
-    <dl>
-        <dt>氏名</dt>
-        <dd><%= user.name %></dd>
-        <dt>出身地</dt>
-        <dd><%= user.birthplace %></dd>
-        <dt>趣味</dt>
-        <dd>
-            <ul>
+<h1>
+    <%= title %>
+</h1>
+<dl>
+    <dt>氏名</dt>
+    <!-- ASPタグ -->
+    <dd>
+        <%= user.name %>
+    </dd>
+    <dt>出身地</dt>
+    <dd>
+        <%= user.birthplace %>
+    </dd>
+    <dt>趣味</dt>
+    <dd>
+        <ul>
             <!-- user.hobby を繰り返し liタグで表示 -->
-            <% user.hobby.forEach((value) => { %>
-                <li><%= value %></li>
-            <% }) %>
-            </ul>
-        </dd>
-    </dl>
+            <% user.hobby.forEach((value)=> { %>
+                <li>
+                    <%= value %>
+                </li>
+                <% }) %>
+        </ul>
+    </dd>
+</dl>

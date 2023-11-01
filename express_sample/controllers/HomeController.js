@@ -1,4 +1,5 @@
-//モジュール化
+// モジュール化
+// Top
 exports.index = (req, res) => {
     // リクエストの処理
     console.log(req.body)
@@ -7,11 +8,12 @@ exports.index = (req, res) => {
     // レスポンスの処理
     // res.send('Hello!!!!!!')
     //テンプレート表示（レンダリング）
+    // views/index.ejs を表示
     res.render('index')
 }
 
+// Profile
 exports.profile = (req, res) => {
-    // res.send('プロフィール')
     var user = {
         id: 1,
         name: 'YSE',
@@ -22,6 +24,5 @@ exports.profile = (req, res) => {
         title: 'プロフィール',
         user: user,
     }
-    // views/profile.ejs に data を渡して表示
     res.render('profile', data)
 }
