@@ -1,5 +1,5 @@
 // models/User モジュールを読み込み
-const User = require('../models/user')
+const User = require('../models/User')
 
 // 入力画面（TOP)
 exports.index = (req, res) => {

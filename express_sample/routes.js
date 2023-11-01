@@ -26,4 +26,4 @@ router.post('/auth', LoginController.auth)
 router.get('/user', UserController.index)
 
 // モジュール化
-module.exports = router
+module.exports = routernp
