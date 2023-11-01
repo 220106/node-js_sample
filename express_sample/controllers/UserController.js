@@ -13,3 +13,8 @@ exports.index = (req, res) => {
         res.redirect('/login')
     }
 }
+
+exports.logout = (req, res) => {
+   delete (req.session.authUser)
+    res.redirect('/login')
+}

@@ -22,8 +22,10 @@ router.get('/item/:id', ItemController.detail)
 router.get('/login', LoginController.index)
 router.post('/auth', LoginController.auth)
 
+
 // User
 router.get('/user', UserController.index)
+router.get('/user/logout', UserController.logout)
 
 // モジュール化
 module.exports = router
